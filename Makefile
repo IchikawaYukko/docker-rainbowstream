@@ -1,17 +1,15 @@
 NAME=yuriko/rainbowstream
 CNTNAME=twitter
-VERSION=1.3.7
+VERSION=1.4.0-alpine
+
+run:	build
+	docker run -it --rm $(NAME):$(VERSION)
 
 build:
 	docker build -t $(NAME):$(VERSION) .
 
-run:
-	docker run -it --rm \
-	--name $(CNTNAME) \
-	$(NAME):$(VERSION)
-
-rm:
-	docker rm $(CNTNAME)
+runold:
+	docker run -it --rm $(NAME):$(VERSION)
 
 attach:
 	docker exec -it $(CNTNAME) /bin/bash
