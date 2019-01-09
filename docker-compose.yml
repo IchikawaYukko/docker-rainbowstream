@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  rainbowstream:
+    image: yuriko/rainbowstream:1.4.0-alpine
+    build:
+      context: .
+
+# "docker-compose up" will not work properly. Use
+# docker-compose run --rm rainbowstream
+# Instead.
