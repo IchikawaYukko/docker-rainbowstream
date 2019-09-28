@@ -1,6 +1,5 @@
-FROM	python:2-alpine
-RUN	apk add zlib-dev jpeg-dev musl-dev gcc && \
+FROM	python:3-alpine
+RUN	apk add --no-cache zlib-dev jpeg-dev musl-dev gcc && \
 	pip install rainbowstream==1.4.0
 
-COPY	.rainbow_oauth /root/.rainbow_oauth
-CMD	/usr/local/bin/rainbowstream
+CMD	["/usr/local/bin/rainbowstream", "-iot"] # Image on Terminal

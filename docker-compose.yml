@@ -2,9 +2,9 @@ version: '2'
 
 services:
   rainbowstream:
-    image: yuriko/rainbowstream:1.4.0-alpine
-    build:
-      context: .
+    image: ichikawayukko/rainbowstream:1.4.0-alpine
+#    volumes:  # Uncomment here after get oAuth token
+#      - ./rainbow_oauth:/root/.rainbow_oauth:ro
 
 # "docker-compose up" will not work properly. Use
 # docker-compose run --rm rainbowstream
